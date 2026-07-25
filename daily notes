@@ -109,3 +109,49 @@ A6 LOGOUT
 3. **Request** — client requests the offered configuration
 4. **Acknowledge** — server confirms and activates the lease
 
+# Day Log — Wireshark Basics
+**Date:** July 25, 2026
+**Source:** TryHackMe — Wireshark: The Basics
+
+## What Wireshark Is
+A tool that captures and shows raw network traffic in real time, packet by packet.
+
+## Interface Layout
+- **Packet list** (top) — one line per packet
+- **Packet details** (middle) — protocol layers (Ethernet → IP → TCP/UDP → app layer)
+- **Packet bytes** (bottom) — raw hex/ASCII
+
+## Capturing Traffic
+- Pick a network interface, start the capture, stop when done
+- **Capture filter** = limits what gets recorded (set before starting)
+- **Display filter** = hides/shows already-captured packets (used anytime)
+
+## Useful Display Filters
+```
+ip.addr == 10.49.167.162
+tcp.port == 443
+http
+
+```
+
+## Color Coding
+Wireshark colors packets by type so you can scan quickly:
+- Green → HTTP
+- Light blue → TCP
+- Black → errors
+
+## Following a Conversation
+Right-click a packet → Follow → TCP Stream, to see the full exchange between client and server.
+
+## Saving Work
+Captures can be saved as `.pcap` / `.pcapng` files for later analysis.
+
+## Next Steps
+- [ ] TryHackMe: Wireshark: Packet Operations
+- [ ] TryHackMe: Wireshark: Traffic Analysis
+- [ ] Capture my own home network traffic and identify DNS/HTTP/ARP packets
+- [ ] Write a short walkthrough with screenshots once I finish one more room
+
+---
+
+
